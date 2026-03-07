@@ -6,27 +6,27 @@ android-minSdk = "24"
 android-targetSdk = "36"
 
 # Kotlin
-kotlin = "2.3.0"
-kotlinx-coroutines = "1.10.1"
-kotlinx-serialization = "1.8.0"
+kotlin = "2.3.10"
+kotlinx-coroutines = "1.10.2"
+kotlinx-serialization = "1.10.0"
 
 # Compose
-composeMultiplatform = "1.10.0"
+composeMultiplatform = "1.10.2"
 material3 = "1.10.0-alpha05"
 
 # AndroidX
-androidx-activity = "1.12.2"
+androidx-activity = "1.12.4"
 androidx-appcompat = "1.7.1"
 androidx-core = "1.17.0"
 androidx-lifecycle = "2.9.6"
-androidx-navigation = "2.9.0"
+androidx-navigation = "2.9.2"
 
 # Koin
-koin = "4.1.0"
+koin = "4.1.1"
 
 # Network
-ktor = "3.1.2"
-coil = "3.1.0"
+ktor = "3.4.1"
+coil = "3.4.0"
 
 # Test
 androidx-espresso = "3.7.0"
