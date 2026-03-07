@@ -22,7 +22,7 @@ androidx-lifecycle = "2.9.6"
 androidx-navigation = "2.9.0"
 
 # Koin
-koin = "4.0.2"
+koin = "4.1.0"
 
 # Network
 ktor = "3.1.2"
