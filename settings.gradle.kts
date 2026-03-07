@@ -33,3 +33,5 @@ dependencyResolutionManagement {
 
 include(":composeApp")
 include(":core:infrastructure")
+include(":core:ui")
+include(":feature:animeList")
