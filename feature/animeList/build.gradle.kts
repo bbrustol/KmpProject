@@ -59,7 +59,7 @@ dependencies {
     debugImplementation(libs.compose.uiTooling)
 }
 
-configure<com.android.build.api.dsl.ApplicationExtension> {
+android {
     namespace = "com.bbrustol.feature.animelist"
     compileSdk = libs.versions.android.compileSdk.get().toInt()
 
