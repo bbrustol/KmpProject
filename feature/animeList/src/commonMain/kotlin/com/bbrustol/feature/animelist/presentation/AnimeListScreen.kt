@@ -14,7 +14,6 @@ import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.GridItemSpan
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material3.Button
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.CircularProgressIndicator
@@ -32,6 +31,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.tooling.preview.Preview
 import coil3.compose.AsyncImage
 import com.bbrustol.core.ui.components.ErrorContent
+import com.bbrustol.core.ui.utils.InversePullToRefreshBox
 import com.bbrustol.feature.animelist.data.remote.response.AnimeListResponse
 import com.bbrustol.feature.animelist.domain.model.mapper.toDomainModel
 import com.bbrustol.feature.animelist.presentation.model.AnimeUiModel
@@ -81,7 +81,11 @@ private fun AnimeGrid(
             TopAppBar(title = { Text("Top Anime") })
         }
     ) { padding ->
-        Box(modifier = Modifier.fillMaxSize().padding(padding)) {
+        InversePullToRefreshBox(
+            isRefreshing = uiState.isLoading && uiState.list.isNotEmpty(),
+            onRefresh = { onEvent(LoadMore) },
+            modifier = Modifier.fillMaxSize().padding(padding),
+        ) {
             LazyVerticalGrid(
                 columns = GridCells.Fixed(2),
                 contentPadding = PaddingValues(8.dp),
@@ -97,20 +101,7 @@ private fun AnimeGrid(
                     )
                 }
 
-                if (uiState.hasNextPage && !uiState.isLoading) {
-                    item(span = { GridItemSpan(maxLineSpan) }) {
-                        Box(
-                            modifier = Modifier.fillMaxWidth().padding(16.dp),
-                            contentAlignment = Alignment.Center,
-                        ) {
-                            Button(onClick = { onEvent(LoadMore) }) {
-                                Text("Load More")
-                            }
-                        }
-                    }
-                }
-
-                if (uiState.isLoading) {
+                if (uiState.isLoading && uiState.list.isEmpty()) {
                     item(span = { GridItemSpan(maxLineSpan) }) {
                         Box(
                             modifier = Modifier.fillMaxWidth().padding(16.dp),
