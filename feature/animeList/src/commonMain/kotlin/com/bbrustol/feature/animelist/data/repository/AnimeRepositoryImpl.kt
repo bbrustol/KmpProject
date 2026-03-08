@@ -7,16 +7,17 @@ import com.bbrustol.core.infrastructure.network.ApiSuccess
 import com.bbrustol.feature.animelist.data.service.AnimeService
 import com.bbrustol.feature.animelist.domain.model.AnimeListDomainModel
 import com.bbrustol.feature.animelist.domain.model.mapper.toDomainModel
+import com.bbrustol.feature.animelist.domain.repository.AnimeRepository
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
 
-class AnimeRepository(
+class AnimeRepositoryImpl(
     private val animeService: AnimeService,
     private val dispatcher: CoroutineDispatcher,
-) {
-    fun getTopAnime(page: Int): Flow<ApiResult<AnimeListDomainModel>> = flow {
+) : AnimeRepository {
+    override fun getTopAnime(page: Int): Flow<ApiResult<AnimeListDomainModel>> = flow {
         when (val result = animeService.getTopAnime(page)) {
             is ApiSuccess -> emit(ApiSuccess(result.data.toDomainModel()))
             is ApiError -> emit(ApiError(result.code, result.message, result.serviceStatusType))

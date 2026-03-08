@@ -24,6 +24,10 @@ androidx-navigation = "2.9.2"
 # Koin
 koin = "4.1.1"
 
+# Test
+turbine = "1.2.1"
+mokkery = "3.2.0"
+
 # Network
 ktor = "3.4.1"
 coil = "3.4.0"
@@ -78,6 +82,8 @@ coil-compose = { module = "io.coil-kt.coil3:coil-compose", version.ref = "coil" 
 coil-network-ktor = { module = "io.coil-kt.coil3:coil-network-ktor3", version.ref = "coil" }
 
 # -------- Test --------
+turbine = { module = "app.cash.turbine:turbine", version.ref = "turbine" }
+mokkery-coroutines = { module = "dev.mokkery:mokkery-coroutines", version.ref = "mokkery" }
 junit = { module = "junit:junit", version.ref = "junit" }
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
 kotlin-testJunit = { module = "org.jetbrains.kotlin:kotlin-test-junit", version.ref = "kotlin" }
@@ -97,3 +103,4 @@ kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", versi
 # Compose
 composeMultiplatform = { id = "org.jetbrains.compose", version.ref = "composeMultiplatform" }
 composeCompiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+mokkery = { id = "dev.mokkery", version.ref = "mokkery" }

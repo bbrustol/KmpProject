@@ -6,7 +6,7 @@ import com.bbrustol.core.infrastructure.network.ApiError
 import com.bbrustol.core.infrastructure.network.ApiException
 import com.bbrustol.core.infrastructure.network.ApiSuccess
 import com.bbrustol.core.infrastructure.network.ServerStatusType
-import com.bbrustol.feature.animelist.data.repository.AnimeRepository
+import com.bbrustol.feature.animelist.domain.repository.AnimeRepository
 import com.bbrustol.feature.animelist.domain.model.AnimeListDomainModel
 import com.bbrustol.feature.animelist.presentation.model.AnimeUiModel
 import com.bbrustol.feature.animelist.presentation.model.mapper.toUiModels
