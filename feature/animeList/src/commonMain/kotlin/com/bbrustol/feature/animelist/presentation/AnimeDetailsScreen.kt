@@ -173,7 +173,7 @@ private fun AnimeDetailsScreenPreview() {
         .toUiModel()
     MaterialTheme {
         AnimeDetailsScreen(
-            uiState = AnimeDetailsUiState.AnimeDetails(anime = anime),
+            uiState = AnimeDetails(anime = anime),
             onEvent = {},
         )
     }

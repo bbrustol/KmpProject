@@ -171,7 +171,7 @@ private fun AnimeListScreenPreview() {
     val domain = previewJson.decodeFromString<AnimeListResponse>(animeListMock).toDomainModel()
     MaterialTheme {
         AnimeListScreen(
-            uiState = AnimeListUiState.AnimeList(
+            uiState = AnimeList(
                 list = domain.toUiModels(),
                 hasNextPage = domain.hasNextPage,
                 isLoading = false,

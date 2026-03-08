@@ -51,7 +51,7 @@ kotlin {
     }
 }
 
-android {
+configure<com.android.build.api.dsl.ApplicationExtension> {
     namespace = "com.bbrustol.kmp"
     compileSdk = libs.versions.android.compileSdk.get().toInt()
 
